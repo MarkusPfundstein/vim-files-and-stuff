@@ -5,9 +5,9 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 echo "INSTALL PLUGINS"
 echo "NERDTree"
 git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
-echo "syntastic"
-cd ~/.vim/bundle && \
-  git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
+echo "ale"
+mkdir -p ~/.vim/pack/git-plugins/start
+git clone https://github.com/w0rp/ale.git ~/.vim/pack/git-plugins/start/ale
 echo "vim-solidity"
 git clone https://github.com/tomlion/vim-solidity.git ~/.vim/bundle/vim-solidity
 echo "vim vue"
