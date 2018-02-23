@@ -21,6 +21,7 @@ git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
 echo "vim-airline-themes"
 git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
 
+echo "-------- DONE MOTHERFUCKER -------"
 echo "manual step for awesome fonts: install https://github.com/powerline/fonts"
 echo "Done. Dont forget to run :Helptags"
 
