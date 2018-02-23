@@ -23,5 +23,6 @@ git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-ai
 
 echo "-------- DONE MOTHERFUCKER -------"
 echo "manual step for awesome fonts: install https://github.com/powerline/fonts"
+echo "in order to have eslint enabled on javascript files you need a 'lint' script in your package.json - e.g. lint: eslint ."
 echo "Done. Dont forget to run :Helptags"
 
