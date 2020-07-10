@@ -122,7 +122,11 @@ set tm=500
 " Enable syntax highlighting
 syntax enable
 
-colorscheme desert
+"colorscheme desert
+colorscheme PaperColor
+"colorscheme delek
+"colorscheme peachpuff 
+
 set background=dark
 
 " Set extra options when running in GUI mode
@@ -170,6 +174,8 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
+autocmd FileType go setlocal tabstop=8 shiftwidth=8 softtabstop=8 noexpandtab
+autocmd FileType cpp setlocal shiftwidth=4 tabstop=4
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -272,6 +278,7 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -396,15 +403,19 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-colorscheme PaperColor
 set number
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts=1
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline_powerline_fonts=1
 
-let g:ale_completion_enabled = 1
+" let g:ale_completion_enabled = 1
 let g:ale_sign_column_always = 1
-let g:airline#extensions#ale#enabled = 1
+" let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+" You can disable this option too
+" " if you don't want linters to run on opening a file
+let g:ale_lint_on_enter = 0
+" let g:airline#extensions#ale#enabled = 1
 
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
@@ -419,7 +430,7 @@ function! LinterStatus() abort
     \)
 endfunction
 
-set statusline=%{LinterStatus()}
+" set statusline=%{LinterStatus()}
 
 packloadall
 silent! helptags ALL
