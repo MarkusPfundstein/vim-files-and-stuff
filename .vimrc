@@ -122,8 +122,8 @@ set tm=500
 " Enable syntax highlighting
 syntax enable
 
-"colorscheme desert
-colorscheme PaperColor
+colorscheme desert
+"colorscheme PaperColor
 "colorscheme delek
 "colorscheme peachpuff 
 
@@ -278,7 +278,7 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
-
+autocmd BufWrite *.c :call DeleteTrailingWS()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -331,12 +331,6 @@ map <leader>s? z=
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-
-" Quickly open a buffer for scripbble
-map <leader>q :e ~/buffer<cr>
-
-" Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
@@ -405,17 +399,17 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 set number
 
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts=1
 
-" let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 1
 let g:ale_sign_column_always = 1
 " let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 " You can disable this option too
 " " if you don't want linters to run on opening a file
 let g:ale_lint_on_enter = 0
-" let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
@@ -432,5 +426,8 @@ endfunction
 
 " set statusline=%{LinterStatus()}
 
+set mouse=a
+
 packloadall
+
 silent! helptags ALL
