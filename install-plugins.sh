@@ -10,11 +10,6 @@ mkdir -p ~/.vim/pack/git-plugins/start
 git clone https://github.com/w0rp/ale.git ~/.vim/pack/git-plugins/start/ale
 echo "rust.vim"
 git clone --depth=1 https://github.com/rust-lang/rust.vim.git ~/.vim/bundle/rust.vim
-echo "vim-solidity"
-git clone https://github.com/tomlion/vim-solidity.git ~/.vim/bundle/vim-solidity
-echo "vim vue"
-cd ~/.vim/bundle && \
-  git clone https://github.com/posva/vim-vue.git
 echo "colorschemes"
 cd ~/.vim && \
   git clone https://github.com/flazz/vim-colorschemes.git bundle/colorschemes
